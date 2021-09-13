@@ -20,26 +20,41 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="This is my blog!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="GLORY.Feonix">
-<meta property="og:url" content="http://example.com/index.html">
+<meta name="description" content="Python程序设计 作业  海龟绘图 文本处理 数字照片墙 送你一首集句诗 简化的PS  @[TOC](Python程序设计 大作业 简化的PS) 摘要完成简易PS的实现，通过编写GUI界面，与用户进行交互，实现显示图片，调整图片亮度，缩放和旋转图片，添加水印等功能。GUI界面的实现，通过PyQt5来进行编写，对于图像的处理，则通过Pillow库对其进行处理，完成所需要的各项功能。布局采用上下">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python程序设计 大作业 简化的PS">
+<meta property="og:url" content="http://example.com/2021/06/23/Python%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-%E5%A4%A7%E4%BD%9C%E4%B8%9A-%E7%AE%80%E5%8C%96%E7%9A%84PS/index.html">
 <meta property="og:site_name" content="GLORY.Feonix">
-<meta property="og:description" content="This is my blog!">
+<meta property="og:description" content="Python程序设计 作业  海龟绘图 文本处理 数字照片墙 送你一首集句诗 简化的PS  @[TOC](Python程序设计 大作业 简化的PS) 摘要完成简易PS的实现，通过编写GUI界面，与用户进行交互，实现显示图片，调整图片亮度，缩放和旋转图片，添加水印等功能。GUI界面的实现，通过PyQt5来进行编写，对于图像的处理，则通过Pillow库对其进行处理，完成所需要的各项功能。布局采用上下">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210624204104643.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM3NDg4OTc=,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210624204438288.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM3NDg4OTc=,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210624204510911.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM3NDg4OTc=,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210624204541449.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210624204611237.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM3NDg4OTc=,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210624204644230.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM3NDg4OTc=,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210624210331431.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM3NDg4OTc=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2021062421044621.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM3NDg4OTc=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210624210503306.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM3NDg4OTc=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2021062421053175.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM3NDg4OTc=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210624210553751.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM3NDg4OTc=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210624210626479.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM3NDg4OTc=,size_16,color_FFFFFF,t_70">
+<meta property="article:published_time" content="2021-06-23T03:15:34.000Z">
+<meta property="article:modified_time" content="2021-09-13T06:00:12.985Z">
 <meta property="article:author" content="GLOGYFeonix">
-<meta property="article:tag" content="blog">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20210624204104643.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM3NDg4OTc=,size_16,color_FFFFFF,t_70#pic_center">
 
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2021/06/23/Python%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-%E5%A4%A7%E4%BD%9C%E4%B8%9A-%E7%AE%80%E5%8C%96%E7%9A%84PS/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2021/06/23/Python%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-%E5%A4%A7%E4%BD%9C%E4%B8%9A-%E7%AE%80%E5%8C%96%E7%9A%84PS/","path":"2021/06/23/Python程序设计-大作业-简化的PS/","title":"Python程序设计 大作业 简化的PS"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>GLORY.Feonix</title>
+<title>Python程序设计 大作业 简化的PS | GLORY.Feonix</title>
   
 
 
@@ -94,7 +109,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -107,6 +122,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E9%A1%B9%E7%9B%AE%E8%83%8C%E6%99%AF%E5%92%8C%E6%84%8F%E4%B9%89"><span class="nav-number">2.</span> <span class="nav-text">1.    项目背景和意义</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E9%A1%B9%E7%9B%AE%E8%83%8C%E6%99%AF"><span class="nav-number">2.1.</span> <span class="nav-text">1.1    项目背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E6%84%8F%E4%B9%89"><span class="nav-number">2.2.</span> <span class="nav-text">1.2    意义</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90"><span class="nav-number">3.</span> <span class="nav-text">2. 需求分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-%E5%9F%BA%E6%9C%AC%E7%9A%84%E4%B8%BB%E7%95%8C%E9%9D%A2%E7%9A%84%E5%88%86%E6%9E%90"><span class="nav-number">3.1.</span> <span class="nav-text">2.1    基本的主界面的分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-%E5%AF%B9%E4%BA%8E%E5%9B%BE%E7%89%87%E7%9A%84%E5%90%84%E4%B8%AA%E5%8F%82%E6%95%B0%E7%9A%84%E8%B0%83%E6%95%B4"><span class="nav-number">3.2.</span> <span class="nav-text">2.2    对于图片的各个参数的调整</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-%E6%B0%B4%E5%8D%B0"><span class="nav-number">3.3.</span> <span class="nav-text">2.3    水印</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E6%A6%82%E8%A6%81%E5%92%8C%E8%AF%A6%E7%BB%86%E8%AE%BE%E8%AE%A1"><span class="nav-number">4.</span> <span class="nav-text">3.    概要和详细设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-%E4%BB%A3%E7%A0%81%E6%80%BB%E6%A1%86%E5%9B%BE"><span class="nav-number">4.1.</span> <span class="nav-text">3.1    代码总框图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-%E5%90%84%E9%83%A8%E5%88%86%E6%A1%86%E5%9B%BE"><span class="nav-number">4.2.</span> <span class="nav-text">3.2    各部分框图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-1-%E8%8F%9C%E5%8D%95%E6%A0%8F%E4%BB%A5%E5%8F%8A%E5%85%B6%E4%B8%89%E4%B8%AA%E4%BA%8B%E4%BB%B6"><span class="nav-number">4.2.1.</span> <span class="nav-text">3.2.1    菜单栏以及其三个事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-2-%E8%B0%83%E6%95%B4%E5%9B%BE%E7%89%87%E7%9A%84%E5%90%84%E4%B8%AA%E5%8F%82%E6%95%B0"><span class="nav-number">4.2.2.</span> <span class="nav-text">3.2.2    调整图片的各个参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-3-%E6%B0%B4%E5%8D%B0"><span class="nav-number">4.2.3.</span> <span class="nav-text">3.2.3    水印</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-4-%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E9%87%8F"><span class="nav-number">4.2.4.</span> <span class="nav-text">3.2.4    全局变量与常量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-5-%E5%A4%84%E7%90%86%E5%9B%BE%E7%89%87%E7%9A%84Process%E7%B1%BB"><span class="nav-number">4.2.5.</span> <span class="nav-text">3.2.5    处理图片的Process类</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-number">5.</span> <span class="nav-text">4.    代码实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-python%E7%89%88%E6%9C%AC%E4%BB%A5%E5%8F%8A%E5%BA%93%E7%89%88%E6%9C%AC%E8%AF%B4%E6%98%8E"><span class="nav-number">5.1.</span> <span class="nav-text">4.1    python版本以及库版本说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-%E6%89%80%E4%BD%BF%E7%94%A8%E7%9A%84%E5%85%B3%E9%94%AE%E5%BA%93"><span class="nav-number">5.2.</span> <span class="nav-text">4.2    所使用的关键库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-1-PyQt5"><span class="nav-number">5.2.1.</span> <span class="nav-text">4.2.1 PyQt5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-2-Pillow"><span class="nav-number">5.2.2.</span> <span class="nav-text">4.2.2 Pillow</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-3-Sys"><span class="nav-number">5.2.3.</span> <span class="nav-text">4.2.3 Sys</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-%E5%90%84%E4%B8%AA%E6%96%87%E4%BB%B6%E7%9A%84%E8%AF%B4%E6%98%8E"><span class="nav-number">5.3.</span> <span class="nav-text">4.3    各个文件的说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-1-Photoshop-py"><span class="nav-number">5.3.1.</span> <span class="nav-text">4.3.1 Photoshop.py</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-2-Widget-self-py"><span class="nav-number">5.3.2.</span> <span class="nav-text">4.3.2 Widget_self.py</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-3-Variable-py"><span class="nav-number">5.3.3.</span> <span class="nav-text">4.3.3 Variable.py</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-4-ProcessPhoto-py"><span class="nav-number">5.3.4.</span> <span class="nav-text">4.3.4 ProcessPhoto.py</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-%E5%85%B3%E9%94%AE%E4%BB%A3%E7%A0%81%E8%AF%B4%E6%98%8E"><span class="nav-number">5.4.</span> <span class="nav-text">4.4    关键代码说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-1-Photoshop-py"><span class="nav-number">5.4.1.</span> <span class="nav-text">4.4.1    Photoshop.py</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%88%9D%E5%A7%8B%E5%8C%96%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6"><span class="nav-number">5.4.1.1.</span> <span class="nav-text">(1)    初始化自定义组件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E5%88%9D%E5%A7%8B%E5%8C%96%E8%BD%AF%E4%BB%B6%E4%B8%BB%E7%AA%97%E5%8F%A3"><span class="nav-number">5.4.1.2.</span> <span class="nav-text">(2)    初始化软件主窗口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">5.4.1.3.</span> <span class="nav-text">(3)    打开文件的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-%E4%BF%9D%E5%AD%98%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">5.4.1.4.</span> <span class="nav-text">(4)    保存文件的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-%E5%85%B3%E9%97%AD%E8%BD%AF%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">5.4.1.5.</span> <span class="nav-text">(5)    关闭软件的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-%E8%AE%BE%E7%BD%AE%E8%8F%9C%E5%8D%95%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="nav-number">5.4.1.6.</span> <span class="nav-text">(6)    设置菜单的功能</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-2-Widget-self-py"><span class="nav-number">5.4.2.</span> <span class="nav-text">4.4.2    Widget_self.py</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%88%9D%E5%A7%8B%E5%8C%96%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E7%9A%84%E7%95%8C%E9%9D%A2%E5%92%8C%E9%93%BE%E6%8E%A5%E5%90%84%E4%B8%AA%E9%83%A8%E4%BB%B6%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="nav-number">5.4.2.1.</span> <span class="nav-text">(1)    初始化自定义组件的界面和链接各个部件的功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E6%94%B9%E5%8F%98%E5%9B%BE%E7%89%87%E7%9A%84%E4%BA%8B%E4%BB%B6"><span class="nav-number">5.4.2.2.</span> <span class="nav-text">(2)    改变图片的事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E6%B7%BB%E5%8A%A0%E6%B0%B4%E5%8D%B0%E4%BA%8B%E4%BB%B6"><span class="nav-number">5.4.2.3.</span> <span class="nav-text">(3)    添加水印事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-%E5%A4%8D%E4%BD%8D%E4%BA%8B%E4%BB%B6"><span class="nav-number">5.4.2.4.</span> <span class="nav-text">(4)    复位事件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-3-ProcessPhoto-py"><span class="nav-number">5.4.3.</span> <span class="nav-text">4.4.3    ProcessPhoto.py</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E7%B1%BB%E6%9D%A5%E5%AD%98%E5%82%A8%E5%9B%BE%E7%89%87%E5%B1%9E%E6%80%A7"><span class="nav-number">5.4.3.1.</span> <span class="nav-text">(1)    定义一个类来存储图片属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E6%94%B9%E5%8F%98%E5%9B%BE%E7%89%87%E5%B1%9E%E6%80%A7%E5%80%BC%E7%9A%84%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0"><span class="nav-number">5.4.3.2.</span> <span class="nav-text">(2)    改变图片属性值的相关函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Process-photo-%E5%87%BD%E6%95%B0"><span class="nav-number">5.4.3.3.</span> <span class="nav-text">(3)    Process_photo()函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-4-Variable-py"><span class="nav-number">5.4.4.</span> <span class="nav-text">4.4.4    Variable.py</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%85%A8%E5%B1%80%E5%B8%B8%E9%87%8F"><span class="nav-number">5.4.4.1.</span> <span class="nav-text">(1)    全局常量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Variable%E7%B1%BB%E5%AD%98%E5%82%A8%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F"><span class="nav-number">5.4.4.2.</span> <span class="nav-text">(2)    Variable类存储全局变量</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-%E4%BB%A3%E7%A0%81%E6%B5%8B%E8%AF%95"><span class="nav-number">6.</span> <span class="nav-text">5.    代码测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E4%B8%BB%E7%95%8C%E9%9D%A2"><span class="nav-number">6.1.</span> <span class="nav-text">5.1程序运行主界面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2%E8%AF%BB%E5%8F%96%E5%9B%BE%E7%89%87%E4%B9%8B%E5%90%8E%E7%9A%84%E7%95%8C%E9%9D%A2"><span class="nav-number">6.2.</span> <span class="nav-text">5.2读取图片之后的界面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-%E4%BD%BF%E7%94%A8%E5%90%84%E7%A7%8D%E6%93%8D%E4%BD%9C%E8%B0%83%E6%95%B4%E5%9B%BE%E7%89%87"><span class="nav-number">6.3.</span> <span class="nav-text">5.3 使用各种操作调整图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-4-%E4%BF%9D%E5%AD%98%E5%8A%9F%E8%83%BD"><span class="nav-number">6.4.</span> <span class="nav-text">5.4 保存功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-5-%E9%87%8D%E7%BD%AE%E5%8A%9F%E8%83%BD%E5%92%8C%E5%8F%96%E6%B6%88%E6%B0%B4%E5%8D%B0"><span class="nav-number">6.5.</span> <span class="nav-text">5.5 重置功能和取消水印</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-6-%E9%80%80%E5%87%BA%E5%8A%9F%E8%83%BD"><span class="nav-number">6.6.</span> <span class="nav-text">5.6 退出功能</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-%E7%BB%93%E8%AE%BA%E4%B8%8E%E6%9C%AA%E6%9D%A5%E6%96%B9%E5%90%91"><span class="nav-number">7.</span> <span class="nav-text">6.    结论与未来方向</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-%E7%BB%93%E8%AE%BA"><span class="nav-number">7.1.</span> <span class="nav-text">6.1    结论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-%E6%9C%AA%E6%9D%A5%E6%96%B9%E5%90%91"><span class="nav-number">7.2.</span> <span class="nav-text">6.2    未来方向</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-%E8%87%B4%E8%B0%A2"><span class="nav-number">8.</span> <span class="nav-text">7.    致谢</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%E4%B8%8E%E9%93%BE%E6%8E%A5"><span class="nav-number">9.</span> <span class="nav-text">8.    参考文献与链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86"><span class="nav-number">10.</span> <span class="nav-text">9. 版本管理</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -154,93 +170,17 @@
 </noscript>
 
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/13/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="GLOGYFeonix">
-      <meta itemprop="description" content="This is my blog!">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="GLORY.Feonix">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/09/13/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2021-09-13 10:05:47 / 修改时间：10:02:27" itemprop="dateCreated datePublished" datetime="2021-09-13T10:05:47+08:00">2021-09-13</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/23/Python%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-%E5%A4%A7%E4%BD%9C%E4%B8%9A-%E7%AE%80%E5%8C%96%E7%9A%84PS/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -253,9 +193,9 @@
       <meta itemprop="name" content="GLORY.Feonix">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/06/23/Python%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-%E5%A4%A7%E4%BD%9C%E4%B8%9A-%E7%AE%80%E5%8C%96%E7%9A%84PS/" class="post-title-link" itemprop="url">Python程序设计 大作业 简化的PS</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Python程序设计 大作业 简化的PS
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -285,7 +225,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p> Python程序设计 作业</p>
+        <p> Python程序设计 作业</p>
 <ol>
 <li>海龟绘图</li>
 <li>文本处理</li>
@@ -373,7 +313,6 @@
 <p><a target="_blank" rel="noopener" href="https://github.com/GLORYFeonix/Python_Learning_Homework">GitHub</a></p>
 <p><a target="_blank" rel="noopener" href="https://gitee.com/gzy8810/Python_Learning_Homework">Gitee</a></p>
 
-      
     </div>
 
     
@@ -381,11 +320,25 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          <div class="post-tags">
+              <a href="/tags/Python/" rel="tag"># Python</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/09/13/hello-world/" rel="next" title="Hello World">
+                  Hello World <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
     </footer>
   </article>
 </div>
+
 
 
 
