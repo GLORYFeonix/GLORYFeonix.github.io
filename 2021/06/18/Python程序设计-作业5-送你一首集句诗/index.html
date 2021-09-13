@@ -20,17 +20,17 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="Python程序设计 作业 海龟绘图 文本处理 数字照片墙 送你一首集句诗 简化的PS  @[TOC](Python程序设计 作业5 送你一首集句诗) 设计思路：利用字典存放每个人对应的诗句和诗名，用pillow库构建图片。 实现方案首先利用.csv文件存储人名，根据.csv文件中的项构建空字典。读入《全唐诗》的.txt文件，根据正则表达式找出人名中的每个字的诗句，同时将其诗名与这句诗组成一个li">
+<meta name="description" content="利用正则表达式和pillow库生成明信片">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python程序设计 作业5 送你一首集句诗">
 <meta property="og:url" content="http://example.com/2021/06/18/Python%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-%E4%BD%9C%E4%B8%9A5-%E9%80%81%E4%BD%A0%E4%B8%80%E9%A6%96%E9%9B%86%E5%8F%A5%E8%AF%97/index.html">
-<meta property="og:site_name" content="GLORY.Feonix">
-<meta property="og:description" content="Python程序设计 作业 海龟绘图 文本处理 数字照片墙 送你一首集句诗 简化的PS  @[TOC](Python程序设计 作业5 送你一首集句诗) 设计思路：利用字典存放每个人对应的诗句和诗名，用pillow库构建图片。 实现方案首先利用.csv文件存储人名，根据.csv文件中的项构建空字典。读入《全唐诗》的.txt文件，根据正则表达式找出人名中的每个字的诗句，同时将其诗名与这句诗组成一个li">
+<meta property="og:site_name" content="年华碎片">
+<meta property="og:description" content="利用正则表达式和pillow库生成明信片">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/2021061717013446.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM3NDg4OTc=,size_16,color_FFFFFF,t_70#pic_center">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20210617170150187.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM3NDg4OTc=,size_16,color_FFFFFF,t_70#pic_center">
 <meta property="article:published_time" content="2021-06-18T08:36:00.000Z">
-<meta property="article:modified_time" content="2021-09-13T06:24:48.317Z">
+<meta property="article:modified_time" content="2021-09-13T09:44:03.126Z">
 <meta property="article:author" content="GLOGYFeonix">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
@@ -44,7 +44,7 @@
 <script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2021/06/18/Python%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-%E4%BD%9C%E4%B8%9A5-%E9%80%81%E4%BD%A0%E4%B8%80%E9%A6%96%E9%9B%86%E5%8F%A5%E8%AF%97/","path":"2021/06/18/Python程序设计-作业5-送你一首集句诗/","title":"Python程序设计 作业5 送你一首集句诗"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Python程序设计 作业5 送你一首集句诗 | GLORY.Feonix</title>
+<title>Python程序设计 作业5 送你一首集句诗 | 年华碎片</title>
   
 
 
@@ -63,6 +63,9 @@
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
@@ -70,7 +73,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">GLORY.Feonix</h1>
+      <h1 class="site-title">年华碎片</h1>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">My Blog</p>
@@ -84,6 +87,15 @@
 
 
 
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
 
 
 
@@ -112,7 +124,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-%E4%BD%9C%E4%B8%9A"><span class="nav-number">1.</span> <span class="nav-text">Python程序设计 作业</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">设计思路：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%A1%88"><span class="nav-number">3.</span> <span class="nav-text">实现方案</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E4%BB%A3%E7%A0%81%E8%AF%B4%E6%98%8E"><span class="nav-number">4.</span> <span class="nav-text">关键代码说明</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%84%E5%BB%BA%E5%AD%97%E5%85%B8%E9%83%A8%E5%88%86"><span class="nav-number">4.1.</span> <span class="nav-text">构建字典部分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%84%E5%BB%BA%E5%9B%BE%E7%89%87%E9%83%A8%E5%88%86"><span class="nav-number">4.2.</span> <span class="nav-text">构建图片部分</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA"><span class="nav-number">5.</span> <span class="nav-text">效果展示</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A"><span class="nav-number">6.</span> <span class="nav-text">心得体会</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">设计思路：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%A1%88"><span class="nav-number">2.</span> <span class="nav-text">实现方案</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E4%BB%A3%E7%A0%81%E8%AF%B4%E6%98%8E"><span class="nav-number">3.</span> <span class="nav-text">关键代码说明</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%84%E5%BB%BA%E5%AD%97%E5%85%B8%E9%83%A8%E5%88%86"><span class="nav-number">3.1.</span> <span class="nav-text">构建字典部分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%84%E5%BB%BA%E5%9B%BE%E7%89%87%E9%83%A8%E5%88%86"><span class="nav-number">3.2.</span> <span class="nav-text">构建图片部分</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA"><span class="nav-number">4.</span> <span class="nav-text">效果展示</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A"><span class="nav-number">5.</span> <span class="nav-text">心得体会</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -120,7 +132,7 @@
           <div class="site-overview">
             <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">GLOGYFeonix</p>
-  <div class="site-description" itemprop="description">This is my blog!</div>
+  <div class="site-description" itemprop="description">感谢孤独时代的陪伴</div>
 </div>
 <div class="site-state-wrap site-overview-item animated">
   <nav class="site-state">
@@ -136,6 +148,17 @@
       </div>
   </nav>
 </div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/GLORYFeonix" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;GLORYFeonix" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:gzy8810@gmail.com" title="E-Mail → mailto:gzy8810@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
 
 
 
@@ -176,11 +199,11 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="GLOGYFeonix">
-      <meta itemprop="description" content="This is my blog!">
+      <meta itemprop="description" content="感谢孤独时代的陪伴">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="GLORY.Feonix">
+      <meta itemprop="name" content="年华碎片">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -202,12 +225,13 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-09-13 14:24:48" itemprop="dateModified" datetime="2021-09-13T14:24:48+08:00">2021-09-13</time>
+        <time title="修改时间：2021-09-13 17:44:03" itemprop="dateModified" datetime="2021-09-13T17:44:03+08:00">2021-09-13</time>
       </span>
 
   
 </div>
 
+            <div class="post-description">利用正则表达式和pillow库生成明信片</div>
         </div>
       </header>
 
@@ -215,15 +239,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="Python程序设计-作业"><a href="#Python程序设计-作业" class="headerlink" title="Python程序设计 作业"></a>Python程序设计 作业</h1><ol>
-<li>海龟绘图</li>
-<li>文本处理</li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u013748897/article/details/117996577">数字照片墙</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u013748897/article/details/118028280">送你一首集句诗</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u013748897/article/details/118147738">简化的PS</a></li>
-</ol>
-<p>@[TOC](Python程序设计 作业5 送你一首集句诗)</p>
-<h1 id="设计思路："><a href="#设计思路：" class="headerlink" title="设计思路："></a>设计思路：</h1><p>利用字典存放每个人对应的诗句和诗名，用pillow库构建图片。</p>
+        <h1 id="设计思路："><a href="#设计思路：" class="headerlink" title="设计思路："></a>设计思路：</h1><p>利用字典存放每个人对应的诗句和诗名，用pillow库构建图片。</p>
 <h1 id="实现方案"><a href="#实现方案" class="headerlink" title="实现方案"></a>实现方案</h1><p>首先利用<code>.csv</code>文件存储人名，根据.csv文件中的项构建空字典。读入《全唐诗》的<code>.txt</code>文件，根据正则表达式找出人名中的每个字的诗句，同时将其诗名与这句诗组成一个list。再将这些list组成一个list。使用<code>random</code>函数从每个字的list中抽取一句作为诗句。将其存入之前的空字典中。这样，在这个字典中，<code>.csv</code>文件中的每一项对应字典的一个key，一个key对应的一个list，存放的是4个list，分别对应“赠”以及人名的三个字的诗句和诗名。</p>
 <p>之后使用<code>pillow</code>库构建图片。事先从晚上下好5张图片作为背景，利用<code>random</code>函数挑选其中一张作为一张卡片的背景。利用<code>pillow</code>的<code>resize</code>调整大小，用<code>pillow.ImageDraw</code>库生成对应文字最终保存。</p>
 <h1 id="关键代码说明"><a href="#关键代码说明" class="headerlink" title="关键代码说明"></a>关键代码说明</h1><h2 id="构建字典部分"><a href="#构建字典部分" class="headerlink" title="构建字典部分"></a>构建字典部分</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">f = csv.reader(<span class="built_in">open</span>(<span class="string">&#x27;name.csv&#x27;</span>))    <span class="comment"># 读入csv文件</span></span><br><span class="line">names = []</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> f:</span><br><span class="line">    names.append(item[<span class="number">0</span>])   <span class="comment"># 将文件中的每一项加入list中</span></span><br><span class="line"></span><br><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;tangshi.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>)  <span class="comment"># 读入txt文件</span></span><br><span class="line">lines = f.readlines()</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">names_dict = &#123;&#125;</span><br><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> names:</span><br><span class="line">    name = <span class="string">&#x27;赠&#x27;</span>+name    <span class="comment"># 构建诗名</span></span><br><span class="line">    content = []</span><br><span class="line">    which_poem = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4</span>):</span><br><span class="line">        estring = name[i]+<span class="string">&#x27;[^，。（）！？《》：；””]&#123;6&#125;[，。！？]&#x27;</span>  <span class="comment"># 构建诗句的正则表达式</span></span><br><span class="line">        e1 = re.<span class="built_in">compile</span>(estring)</span><br><span class="line">        estring = <span class="string">&#x27;【[^】]*】&#x27;</span>  <span class="comment"># 构建诗名的正则表达式</span></span><br><span class="line">        e2 = re.<span class="built_in">compile</span>(estring)</span><br><span class="line">        poem_name = <span class="string">&quot;&quot;</span></span><br><span class="line">        find_result = []</span><br><span class="line">        <span class="comment"># 根据正则表达式寻找结果并加入list</span></span><br><span class="line">        <span class="keyword">for</span> line <span class="keyword">in</span> lines:</span><br><span class="line">            line = line.replace(<span class="string">u&#x27;\u3000&#x27;</span>, <span class="string">u&#x27; &#x27;</span>)</span><br><span class="line">            <span class="keyword">if</span>(e2.findall(line) != []):</span><br><span class="line">                poem_name = line[line.find(<span class="string">&#x27;【&#x27;</span>):line.rfind(<span class="string">&quot;\\&quot;</span>)]</span><br><span class="line">            <span class="keyword">if</span>(e1.findall(line) != []):</span><br><span class="line">                result = [poem_name, e1.findall(line)[<span class="number">0</span>]]</span><br><span class="line">                find_result.append(result)</span><br><span class="line">        result = random.choice(find_result) <span class="comment"># 利用random函数挑选结果</span></span><br><span class="line">        <span class="comment"># 重构标点符号</span></span><br><span class="line">        <span class="keyword">if</span> i % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">            result[<span class="number">1</span>] = result[<span class="number">1</span>][<span class="number">0</span>:<span class="number">7</span>]+<span class="string">&#x27;，&#x27;</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            temp = random.randint(<span class="number">0</span>, <span class="number">2</span>)</span><br><span class="line">            biaodian = [<span class="string">&#x27;。&#x27;</span>, <span class="string">&#x27;？&#x27;</span>, <span class="string">&#x27;！&#x27;</span>]</span><br><span class="line">            result[<span class="number">1</span>] = result[<span class="number">1</span>][<span class="number">0</span>:<span class="number">7</span>]+biaodian[temp]</span><br><span class="line">        content.append(result)</span><br><span class="line">    names_dict[name] = content  <span class="comment"># 最终加入字典</span></span><br></pre></td></tr></table></figure>
@@ -245,6 +261,23 @@
     
 
     <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>GLOGYFeonix
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://example.com/2021/06/18/Python%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-%E4%BD%9C%E4%B8%9A5-%E9%80%81%E4%BD%A0%E4%B8%80%E9%A6%96%E9%9B%86%E5%8F%A5%E8%AF%97/" title="Python程序设计 作业5 送你一首集句诗">http://example.com/2021/06/18/Python程序设计-作业5-送你一首集句诗/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
           <div class="post-tags">
               <a href="/tags/Python/" rel="tag"># Python</a>
           </div>
