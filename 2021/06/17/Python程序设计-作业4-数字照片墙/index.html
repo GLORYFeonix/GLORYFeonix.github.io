@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<meta name="description" content="Python程序设计 作业 海龟绘图 文本处理 数字照片墙 送你一首集句诗 简化的PS  @[TOC](Python程序设计 作业4 数字照片墙) 设计思路：使用Pillow分别构建同样大小的图片text.jpg、wall.jpg，再根据两张图片的相同位置的像素情况构建final.jpg 实现方案首先将图片统一重命名待用。然后构建text.jpg来存放照片墙的文字图层。之后随机选择照片，调整其大小">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python程序设计 作业4 数字照片墙">
+<meta property="og:url" content="http://example.com/2021/06/17/Python%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-%E4%BD%9C%E4%B8%9A4-%E6%95%B0%E5%AD%97%E7%85%A7%E7%89%87%E5%A2%99/index.html">
+<meta property="og:site_name" content="GLORY.Feonix">
+<meta property="og:description" content="Python程序设计 作业 海龟绘图 文本处理 数字照片墙 送你一首集句诗 简化的PS  @[TOC](Python程序设计 作业4 数字照片墙) 设计思路：使用Pillow分别构建同样大小的图片text.jpg、wall.jpg，再根据两张图片的相同位置的像素情况构建final.jpg 实现方案首先将图片统一重命名待用。然后构建text.jpg来存放照片墙的文字图层。之后随机选择照片，调整其大小">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210618162145251.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM3NDg4OTc=,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="article:published_time" content="2021-06-17T08:59:33.000Z">
+<meta property="article:modified_time" content="2021-09-13T06:23:31.330Z">
+<meta property="article:author" content="GLOGYFeonix">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20210618162145251.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM3NDg4OTc=,size_16,color_FFFFFF,t_70#pic_center">
+
+
+<link rel="canonical" href="http://example.com/2021/06/17/Python%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-%E4%BD%9C%E4%B8%9A4-%E6%95%B0%E5%AD%97%E7%85%A7%E7%89%87%E5%A2%99/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2021/06/17/Python%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-%E4%BD%9C%E4%B8%9A4-%E6%95%B0%E5%AD%97%E7%85%A7%E7%89%87%E5%A2%99/","path":"2021/06/17/Python程序设计-作业4-数字照片墙/","title":"Python程序设计 作业4 数字照片墙"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Python程序设计 作业4 数字照片墙 | GLORY.Feonix</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">GLORY.Feonix</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">My Blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-%E4%BD%9C%E4%B8%9A"><span class="nav-number">1.</span> <span class="nav-text">Python程序设计 作业</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">设计思路：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%A1%88"><span class="nav-number">3.</span> <span class="nav-text">实现方案</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E4%BB%A3%E7%A0%81%E8%AF%B4%E6%98%8E"><span class="nav-number">4.</span> <span class="nav-text">关键代码说明</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%84%E5%BB%BA%E6%96%87%E5%AD%97%E5%9B%BE%E5%B1%82"><span class="nav-number">4.1.</span> <span class="nav-text">构建文字图层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%84%E5%BB%BA%E8%83%8C%E6%99%AF%E5%9B%BE%E5%B1%82"><span class="nav-number">4.2.</span> <span class="nav-text">构建背景图层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%84%E5%BB%BA%E6%9C%80%E7%BB%88%E5%9B%BE%E7%89%87"><span class="nav-number">4.3.</span> <span class="nav-text">构建最终图片</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA"><span class="nav-number">5.</span> <span class="nav-text">效果展示</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A"><span class="nav-number">6.</span> <span class="nav-text">心得体会</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-overview">
+            <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">GLOGYFeonix</p>
+  <div class="site-description" itemprop="description">This is my blog!</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/17/Python%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-%E4%BD%9C%E4%B8%9A4-%E6%95%B0%E5%AD%97%E7%85%A7%E7%89%87%E5%A2%99/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="GLOGYFeonix">
+      <meta itemprop="description" content="This is my blog!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="GLORY.Feonix">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Python程序设计 作业4 数字照片墙
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-06-17 16:59:33" itemprop="dateCreated datePublished" datetime="2021-06-17T16:59:33+08:00">2021-06-17</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-09-13 14:23:31" itemprop="dateModified" datetime="2021-09-13T14:23:31+08:00">2021-09-13</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="Python程序设计-作业"><a href="#Python程序设计-作业" class="headerlink" title="Python程序设计 作业"></a>Python程序设计 作业</h1><ol>
+<li>海龟绘图</li>
+<li>文本处理</li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u013748897/article/details/117996577">数字照片墙</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u013748897/article/details/118028280">送你一首集句诗</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u013748897/article/details/118147738">简化的PS</a></li>
+</ol>
+<p>@[TOC](Python程序设计 作业4 数字照片墙)</p>
+<h1 id="设计思路："><a href="#设计思路：" class="headerlink" title="设计思路："></a>设计思路：</h1><p>使用<code>Pillow</code>分别构建同样大小的图片<code>text.jpg</code>、<code>wall.jpg</code>，再根据两张图片的相同位置的像素情况构建<code>final.jpg</code></p>
+<h1 id="实现方案"><a href="#实现方案" class="headerlink" title="实现方案"></a>实现方案</h1><p>首先将图片统一重命名待用。然后构建<code>text.jpg</code>来存放照片墙的文字图层。之后随机选择照片，调整其大小，按顺序粘贴组成一张大的图片<code>wall.jpg</code>来存放照片墙的背景图层。最后新建一张空的大小一样的图片<code>final.jpg</code>。通过<code>Pillow.getpixel()</code>获取两张图的像素信息，逐个像素进行比较，若<code>text.jpg</code>中的一点像素为大红色，则对<code>final.jpg</code>的同一点使用<code>Pillow.putpixel()</code>赋同一点处<code>wall.jpg</code>的像素信息。</p>
+<h1 id="关键代码说明"><a href="#关键代码说明" class="headerlink" title="关键代码说明"></a>关键代码说明</h1><h2 id="构建文字图层"><a href="#构建文字图层" class="headerlink" title="构建文字图层"></a>构建文字图层</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">text=<span class="string">&quot;41802198&quot;</span> <span class="comment"># 设置文字图层内容</span></span><br><span class="line">ft=ImageFont.truetype(<span class="string">&quot;shuma.ttf&quot;</span>, <span class="built_in">int</span>(BIG_HEIGHT*<span class="number">1</span>))   <span class="comment"># 选择字体和字体大小</span></span><br><span class="line">text_image=Image.new(<span class="string">&quot;RGB&quot;</span>, (BIG_WIDTH,BIG_HEIGHT)) <span class="comment"># 新建一张空图</span></span><br><span class="line">draw = ImageDraw.Draw(text_image)</span><br><span class="line">draw.text((<span class="number">0</span>,<span class="number">0</span>), text,font=ft,fill=<span class="string">&quot;red&quot;</span>)   <span class="comment"># 写入字</span></span><br><span class="line">text_image.save(<span class="string">&quot;text.jpg&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="构建背景图层"><a href="#构建背景图层" class="headerlink" title="构建背景图层"></a>构建背景图层</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">wall_image=Image.new(<span class="string">&quot;RGB&quot;</span>, (BIG_WIDTH,BIG_HEIGHT)) <span class="comment"># 新建空图</span></span><br><span class="line"><span class="comment"># 通过循环粘贴小图片成大图片</span></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(BIG_WIDTH//SMALL_WIDTH):</span><br><span class="line">    <span class="keyword">for</span> y <span class="keyword">in</span> <span class="built_in">range</span>(BIG_HEIGHT//SMALL_HEIGHT):</span><br><span class="line">        num=random.randint(<span class="number">1</span>,<span class="number">10</span>)    <span class="comment"># 随机选图</span></span><br><span class="line">        tmp=Image.<span class="built_in">open</span>(<span class="string">&quot;photo/&quot;</span>+<span class="built_in">str</span>(num)+<span class="string">&quot;.jpg&quot;</span>)</span><br><span class="line">        tmp=tmp.resize((SMALL_WIDTH,SMALL_HEIGHT),Image.NEAREST)    <span class="comment"># 调整大小</span></span><br><span class="line">        wall_image.paste(tmp,(x*SMALL_WIDTH,y*SMALL_HEIGHT))  <span class="comment">#粘贴图片   </span></span><br><span class="line">wall_image.save(<span class="string">&quot;wall.jpg&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="构建最终图片"><a href="#构建最终图片" class="headerlink" title="构建最终图片"></a>构建最终图片</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">wall_image=Image.new(<span class="string">&quot;RGB&quot;</span>, (BIG_WIDTH,BIG_HEIGHT)) <span class="comment"># 新建空图</span></span><br><span class="line"><span class="comment"># 通过循环粘贴小图片成大图片</span></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(BIG_WIDTH//SMALL_WIDTH):</span><br><span class="line">    <span class="keyword">for</span> y <span class="keyword">in</span> <span class="built_in">range</span>(BIG_HEIGHT//SMALL_HEIGHT):</span><br><span class="line">        num=random.randint(<span class="number">1</span>,<span class="number">10</span>)    <span class="comment"># 随机选图</span></span><br><span class="line">        tmp=Image.<span class="built_in">open</span>(<span class="string">&quot;photo/&quot;</span>+<span class="built_in">str</span>(num)+<span class="string">&quot;.jpg&quot;</span>)</span><br><span class="line">        tmp=tmp.resize((SMALL_WIDTH,SMALL_HEIGHT),Image.NEAREST)    <span class="comment"># 调整大小</span></span><br><span class="line">        wall_image.paste(tmp,(x*SMALL_WIDTH,y*SMALL_HEIGHT))  <span class="comment">#粘贴图片   </span></span><br><span class="line">wall_image.save(<span class="string">&quot;wall.jpg&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h1><p><img src="https://img-blog.csdnimg.cn/20210618162145251.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM3NDg4OTc=,size_16,color_FFFFFF,t_70#pic_center" alt="照片墙"></p>
+<h1 id="心得体会"><a href="#心得体会" class="headerlink" title="心得体会"></a>心得体会</h1><p>本次作业考察的主要对图片的操作，难度不大。需要我们对图片各种格式、通道有所了解。其余的无非就是一些简单的判断以及赋值。本次作业完成的方法有很多，每一种都能帮助我们更好地学习图片的相关知识，希望大家都能多尝试几种方法，学习到更多相关知识。</p>
+<p>本作业已上传至Github以及Gitee，希望各位能点个star再走 :smile:。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/GLORYFeonix/Python_Learning_Homework">GitHub</a></p>
+<p><a target="_blank" rel="noopener" href="https://gitee.com/gzy8810/Python_Learning_Homework">Gitee</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Python/" rel="tag"># Python</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/06/18/Python%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-%E4%BD%9C%E4%B8%9A5-%E9%80%81%E4%BD%A0%E4%B8%80%E9%A6%96%E9%9B%86%E5%8F%A5%E8%AF%97/" rel="next" title="Python程序设计 作业5 送你一首集句诗">
+                  Python程序设计 作业5 送你一首集句诗 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">GLOGYFeonix</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
