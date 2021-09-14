@@ -18,8 +18,9 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"gloryfeonix.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"red","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"gloryfeonix.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"red","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 <meta name="description" content="利用正则表达式和pillow库生成明信片">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python程序设计 作业5 送你一首集句诗">
@@ -81,6 +82,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -99,11 +101,37 @@
 
 
       
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
         
@@ -176,7 +204,7 @@
       </span>
   </div>
   <div class="cc-license site-overview-item animated" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/big/by_nc_sa.svg" alt="Creative Commons"></a>
   </div>
 
 
@@ -293,8 +321,8 @@
 
 <h2 id="构建图片部分"><a href="#构建图片部分" class="headerlink" title="构建图片部分"></a>构建图片部分</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> names_dict:</span><br><span class="line">    num=random.randint(<span class="number">1</span>,<span class="number">5</span>) <span class="comment"># 使用random函数挑选背景图片</span></span><br><span class="line">    img = Image.<span class="built_in">open</span>(<span class="string">&#x27;background/&#x27;</span>+<span class="built_in">str</span>(num)+<span class="string">&#x27;.png&#x27;</span>)</span><br><span class="line">    img=img.resize((<span class="number">800</span>,<span class="number">1000</span>))  <span class="comment"># 使用resize函数调整背景图片大小</span></span><br><span class="line">    draw = ImageDraw.Draw(img)</span><br><span class="line">    font = ImageFont.truetype(font=<span class="string">&#x27;JiangPanJiuShiYue-2.ttf&#x27;</span>, size=<span class="number">36</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 信头部分</span></span><br><span class="line">    draw.text(xy=(<span class="number">100</span>,<span class="number">150</span>),text=<span class="string">&quot;亲爱的&quot;</span>,fill=(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>),font=font)</span><br><span class="line">    draw.text(xy=(<span class="number">208</span>,<span class="number">150</span>),text=name[<span class="number">1</span>:],fill=(random.randint(<span class="number">0</span>,<span class="number">255</span>),random.randint(<span class="number">0</span>,<span class="number">255</span>),random.randint(<span class="number">0</span>,<span class="number">255</span>)),font=font)</span><br><span class="line">    draw.text(xy=(<span class="number">300</span>,<span class="number">150</span>),text=<span class="string">&quot;：&quot;</span>,fill=(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>),font=font)</span><br><span class="line">    draw.text(xy=(<span class="number">172</span>,<span class="number">200</span>),text=<span class="string">&quot;为您写了首诗，希望您喜欢：&quot;</span>,fill=(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>),font=font)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 诗的部分</span></span><br><span class="line">    i=<span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> si <span class="keyword">in</span> names_dict[name]:</span><br><span class="line">        draw.text(xy=(<span class="number">172</span>,<span class="number">250</span>+i*<span class="number">50</span>),text=si[<span class="number">1</span>][<span class="number">0</span>],fill=(random.randint(<span class="number">0</span>,<span class="number">255</span>),random.randint(<span class="number">0</span>,<span class="number">255</span>),random.randint(<span class="number">0</span>,<span class="number">255</span>)),font=font)</span><br><span class="line">        draw.text(xy=(<span class="number">208</span>, <span class="number">250</span>+i*<span class="number">50</span>), text=si[<span class="number">1</span>][<span class="number">1</span>:], fill=(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>), font=font)</span><br><span class="line">        i=i+<span class="number">1</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 信尾部分</span></span><br><span class="line">    draw.text(xy=(<span class="number">172</span>,<span class="number">500</span>),text=<span class="string">&quot;此致&quot;</span>,fill=(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>),font=font)</span><br><span class="line">    draw.text(xy=(<span class="number">100</span>,<span class="number">550</span>),text=<span class="string">&quot;敬礼！&quot;</span>,fill=(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>),font=font)</span><br><span class="line">    draw.text(xy=(<span class="number">550</span>,<span class="number">650</span>),text=<span class="string">&quot;郭泽宇&quot;</span>,fill=(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>),font=font)</span><br><span class="line">    draw.text(xy=(<span class="number">550</span>,<span class="number">700</span>),text=<span class="string">&quot;2021/6/17&quot;</span>,fill=(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>),font=font)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 备注部分</span></span><br><span class="line">    font = ImageFont.truetype(font=<span class="string">&#x27;MoRanXingKai-2.ttf&#x27;</span>, size=<span class="number">12</span>)</span><br><span class="line">    draw.text(xy=(<span class="number">100</span>,<span class="number">600</span>),text=<span class="string">&quot;备注：&quot;</span>,fill=(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>),font=font)</span><br><span class="line">    i=<span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> si <span class="keyword">in</span> names_dict[name]:</span><br><span class="line">        draw.text(xy=(<span class="number">136</span>, <span class="number">600</span>+i*<span class="number">15</span>), text=si[<span class="number">0</span>], fill=(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>), font=font)</span><br><span class="line">        i=i+<span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 保存图片</span></span><br><span class="line">    file_path=<span class="string">&quot;card/&quot;</span>+name+<span class="string">&quot;.png&quot;</span></span><br><span class="line">    img.save(file_path)</span><br></pre></td></tr></table></figure>
 
-<h1 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h1><p><img src="https://img-blog.csdnimg.cn/2021061717013446.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM3NDg4OTc=,size_16,color_FFFFFF,t_70#pic_center" alt="赠刘德华"></p>
-<p><img src="https://img-blog.csdnimg.cn/20210617170150187.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM3NDg4OTc=,size_16,color_FFFFFF,t_70#pic_center" alt="赠林场就"></p>
+<h1 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h1><p><img data-src="https://img-blog.csdnimg.cn/2021061717013446.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM3NDg4OTc=,size_16,color_FFFFFF,t_70#pic_center" alt="赠刘德华"></p>
+<p><img data-src="https://img-blog.csdnimg.cn/20210617170150187.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM3NDg4OTc=,size_16,color_FFFFFF,t_70#pic_center" alt="赠林场就"></p>
 <h1 id="心得体会"><a href="#心得体会" class="headerlink" title="心得体会"></a>心得体会</h1><p>本次作业考察的主要是我们对课堂上讲过的正则表达式以及各类容器的使用，难度并不是很大。而耗费时间最多的部分反而在于最终构建贺卡的部分。一开始我选择的是使用markdown构建贺卡之后转成pdf，遇到的困难主要有构建markdown文件时的格式（换行，背景等）以及最终将md文件转成pdf文件。而后一项始终未能解决，因此在耗费大量时间之后不得不重新更换成使用pillow库构建图片的方式来完成本次作业。</p>
 <p>我一开始真没想到，md文件转成pdf文件不好转，也没想到python写md会有如此多的问题。因此耗费了大量的时间。这提醒我们在完成目标前，需要对方法进行充分的了解、判断，不能盲目开做，最终只会费力不讨好。</p>
 <p>本作业已上传至Github以及Gitee，希望各位能点个star再走 :smile:。</p>
@@ -382,7 +410,7 @@
       <div class="social-item">
         <a target="_blank" class="social-link" href="https://blog.csdn.net/u013748897?spm=1000.2115.3001.5343">
           <span class="icon">
-            <i class="fad fa-monkey"></i>
+            <i class="fa fa-monkey"></i>
           </span>
 
           <span class="label">CSDN</span>
@@ -458,6 +486,7 @@
 
 
 
+    <div class="comments gitalk-container"></div>
 </div>
   </main>
 
@@ -497,18 +526,27 @@
 
   
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
   
+<script src="/js/third-party/search/local-search.js"></script>
 
 
 
+  <script src="/js/third-party/fancybox.js"></script>
 
   
 
 
 
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"GLORYFeonix","repo":"My-Blog-Gitalk","client_id":"3ce4b05b7907b5031f01","client_secret":"ffec83f9170c2799f8faf57bd54592ffca630caf","admin_user":"GLORYFeonix","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"91ba49eaa2fa6d86f47f2a3fe49999e4"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
 </html>

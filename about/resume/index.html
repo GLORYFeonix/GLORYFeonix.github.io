@@ -18,8 +18,9 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"gloryfeonix.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"red","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"gloryfeonix.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"red","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 <meta name="description" content="郭泽宇                                            18924267118                    ·                                      gzy8810@gmail.com                    ·">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -89,6 +90,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -107,11 +109,37 @@
 
 
       
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
         
@@ -184,7 +212,7 @@
       </span>
   </div>
   <div class="cc-license site-overview-item animated" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/big/by_nc_sa.svg" alt="Creative Commons"></a>
   </div>
 
 
@@ -226,13 +254,13 @@
           
           
               
-  <li class="menu-item menu-item-pig"><a href="/about/pig/" rel="section"><i class="fa fa-user fa-fw"></i>养猪人</a></li>
+  <li class="menu-item menu-item-pig"><a href="/about/pig/" rel="section"><i class="fa fa-piggy-bank fa-fw"></i>养猪人</a></li>
 
 
           
           
               
-  <li class="menu-item menu-item-resume"><a href="/about/resume/" rel="section"><i class="fa fa-user fa-fw"></i>简历</a></li>
+  <li class="menu-item menu-item-resume"><a href="/about/resume/" rel="section"><i class="fa fa-file fa-fw"></i>简历</a></li>
 
 
           
@@ -270,22 +298,22 @@
      <h1>郭泽宇</h1>
      <div>
          <span>
-             <img src="assets/phone.svg" width="18px">
+             <img data-src="assets/phone.svg" width="18px">
              18924267118
          </span>
          ·
          <span>
-             <img src="assets/envelope-solid.svg" width="18px">
+             <img data-src="assets/envelope-solid.svg" width="18px">
              gzy8810@gmail.com
          </span>
          ·
          <span>
-             <img src="assets/QQ.svg" width="18px">
+             <img data-src="assets/QQ.svg" width="18px">
              836520090
          </span>
          ·
          <span>
-             <img src="assets/Wechat.svg" width="18px">
+             <img data-src="assets/Wechat.svg" width="18px">
              fe62823487
          </span>
      </div>
@@ -293,8 +321,8 @@
 
 
 
-<h2 id="个人信息"><a href="#个人信息" class="headerlink" title=" 个人信息"></a><img src="../../../../Resume/assets/info-circle-solid.svg" width="30px"> 个人信息</h2><div>
-    <img src=assets//MyPicture.png width=20% style="float:right" />
+<h2 id="个人信息"><a href="#个人信息" class="headerlink" title=" 个人信息"></a><img data-src="../../../../Resume/assets/info-circle-solid.svg" width="30px"> 个人信息</h2><div>
+    <img data-src=assets//MyPicture.png width=20% style="float:right" />
 </div>
 
 
@@ -308,16 +336,16 @@
 <li>技术博客：<a href="https://gloryfeonix.github.io/">https://gloryfeonix.github.io/</a></li>
 <li>Github：<a target="_blank" rel="noopener" href="https://github.com/GLORYFeonix">https://github.com/GLORYFeonix</a></li>
 </ul>
-<h2 id="教育经历"><a href="#教育经历" class="headerlink" title=" 教育经历"></a><img src="../../../../Resume/assets/graduation-cap-solid.svg" width="30px"> 教育经历</h2><ul>
+<h2 id="教育经历"><a href="#教育经历" class="headerlink" title=" 教育经历"></a><img data-src="../../../../Resume/assets/graduation-cap-solid.svg" width="30px"> 教育经历</h2><ul>
 <li>学士，北京科技大学，计算机与通信工程学院，通信工程专业，2018.9~2022.7</li>
 <li>通过了 CET4 英语等级考试</li>
 </ul>
-<h2 id="实习经历"><a href="#实习经历" class="headerlink" title=" 实习经历"></a><img src="../../../../Resume/assets/briefcase-solid.svg" width="30px"> 实习经历</h2><ul>
+<h2 id="实习经历"><a href="#实习经历" class="headerlink" title=" 实习经历"></a><img data-src="../../../../Resume/assets/briefcase-solid.svg" width="30px"> 实习经历</h2><ul>
 <li><p><strong>北京百度网讯科技有限公司，百度智能云爱速搭部门，开发、测试工程师，2021.6~2021.8</strong></p>
 <p>负责GF图书管理系统的设计、开发、功能测试，几乎一个人完成了该项目所有工作，并在基础功能之上，添加了许多实用的拓展功能。该项目在 2021百度爱速搭•低代码应用开发大赛中获奖。</p>
 </li>
 </ul>
-<h2 id="项目经历"><a href="#项目经历" class="headerlink" title=" 项目经历"></a><img src="../../../../Resume/assets/project-diagram-solid.svg" width="30px"> 项目经历</h2><ul>
+<h2 id="项目经历"><a href="#项目经历" class="headerlink" title=" 项目经历"></a><img data-src="../../../../Resume/assets/project-diagram-solid.svg" width="30px"> 项目经历</h2><ul>
 <li><p><strong>集成电路芯片检测系统（2020.3~至今）</strong></p>
 <p><em>C、C++、Verilog HDL</em></p>
 <p>作为项目经理，负责团队进度管理、工作分配、各部门协调等，以及部分功能的开发工作。在项目过程中带领队员共同进步、合理把控项目进度，最终大幅领先预期工作计划。</p>
@@ -334,7 +362,7 @@
 <p>该项目是 2021百度爱速搭•低代码应用开发大赛 参赛项目，荣获优秀奖。</p>
 </li>
 </ul>
-<h2 id="技能清单"><a href="#技能清单" class="headerlink" title=" 技能清单"></a><img src="../../../../Resume/assets/tools-solid.svg" width="30px"> 技能清单</h2><ul>
+<h2 id="技能清单"><a href="#技能清单" class="headerlink" title=" 技能清单"></a><img data-src="../../../../Resume/assets/tools-solid.svg" width="30px"> 技能清单</h2><ul>
 <li><p>★★★ Java</p>
 </li>
 <li><p>★★☆ C++、Python</p>
@@ -364,6 +392,7 @@
     
 
 
+    <div class="comments gitalk-container"></div>
 </div>
   </main>
 
@@ -403,18 +432,27 @@
 
   
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
   
+<script src="/js/third-party/search/local-search.js"></script>
 
 
 
+  <script src="/js/third-party/fancybox.js"></script>
 
   
 
 
 
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"GLORYFeonix","repo":"My-Blog-Gitalk","client_id":"3ce4b05b7907b5031f01","client_secret":"ffec83f9170c2799f8faf57bd54592ffca630caf","admin_user":"GLORYFeonix","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"ab7f52c8984aa3e4d70aaef8f23b902d"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
 </html>
