@@ -50,24 +50,6 @@
       </tags>
   </entry>
   <entry>
-    <title>初中，雨天，窗外，车厢，王心凌</title>
-    <url>/2021/11/25/%E5%88%9D%E4%B8%AD%EF%BC%8C%E9%9B%A8%E5%A4%A9%EF%BC%8C%E7%AA%97%E5%A4%96%EF%BC%8C%E8%BD%A6%E5%8E%A2%EF%BC%8C%E7%8E%8B%E5%BF%83%E5%87%8C/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script>
-    <div id="aplayer-CjbjmvHR" class="aplayer aplayer-tag-marker meting-tag-marker"
-         data-id="2103007" data-server="netease" data-type="album" data-mode="circulation" data-autoplay="true" data-mutex="false" data-listmaxheight="340px" data-preload="none" data-theme="#ad7a86"
-    ></div>
-<p>《爱不爱》刚发售，是我买的第一张Cyndi的专辑。</p>
-<p>12月的广州，似乎并没有与其他季节有太多的不同。正如这一天也与平常没有区别一样。但看着车窗上流下来的雨滴，感受着微凉的空调，我默默地循环着这张专中的《忘了我也不错》和《匿名的安慰》，莫名地觉得今天有了它独特的味道。</p>
-<p><img data-src="https://i.loli.net/2021/11/25/VmHiM4oQt5DE2PW.jpg" alt="《爱不爱》Cover.jpg"></p>
-]]></content>
-      <categories>
-        <category>心情随笔</category>
-      </categories>
-      <tags>
-        <tag>王心凌</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Python程序设计 大作业 简化的PS</title>
     <url>/2021/06/23/Python%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-%E5%A4%A7%E4%BD%9C%E4%B8%9A-%E7%AE%80%E5%8C%96%E7%9A%84PS/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="项目背景和意义"><a href="#项目背景和意义" class="headerlink" title="项目背景和意义"></a>项目背景和意义</h1><h2 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h2><p>随着时代的发展，人们对于修图的需求越来越大，在生活中随处可见处理过的图片，原模原样的图片已经很少见了，在基本的手机自带的相机中，都有着一大堆对于图像进行处理的功能。在学习完本学期的Python课程之后，我对GUI界面编程十分感兴趣，所以打算用PyQt5结合Pillow库，制作一个简单的修图软件。</p>
@@ -156,6 +138,24 @@
       </tags>
   </entry>
   <entry>
+    <title>初中，雨天，窗外，车厢，王心凌</title>
+    <url>/2021/11/25/%E5%88%9D%E4%B8%AD%EF%BC%8C%E9%9B%A8%E5%A4%A9%EF%BC%8C%E7%AA%97%E5%A4%96%EF%BC%8C%E8%BD%A6%E5%8E%A2%EF%BC%8C%E7%8E%8B%E5%BF%83%E5%87%8C/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script>
+    <div id="aplayer-zPBZpNOc" class="aplayer aplayer-tag-marker meting-tag-marker"
+         data-id="2103007" data-server="netease" data-type="album" data-mode="circulation" data-autoplay="true" data-mutex="false" data-listmaxheight="340px" data-preload="none" data-theme="#ad7a86"
+    ></div>
+<p>《爱不爱》刚发售，是我买的第一张Cyndi的专辑。</p>
+<p>12月的广州，似乎并没有与其他季节有太多的不同。正如这一天也与平常没有区别一样。但看着车窗上流下来的雨滴，感受着微凉的空调，我默默地循环着这张专中的《忘了我也不错》和《匿名的安慰》，莫名地觉得今天有了它独特的味道。</p>
+<p><img data-src="https://i.loli.net/2021/11/25/VmHiM4oQt5DE2PW.jpg" alt="《爱不爱》Cover.jpg"></p>
+]]></content>
+      <categories>
+        <category>心情随笔</category>
+      </categories>
+      <tags>
+        <tag>王心凌</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>基于FPGA的VGA接口显示屏显示实验</title>
     <url>/2021/12/27/%E5%9F%BA%E4%BA%8EFPGA%E7%9A%84VGA%E6%8E%A5%E5%8F%A3%E6%98%BE%E7%A4%BA%E5%B1%8F%E6%98%BE%E7%A4%BA%E5%AE%9E%E9%AA%8C/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="设计及实现"><a href="#设计及实现" class="headerlink" title="设计及实现"></a>设计及实现</h1><p>完整代码见<a href="https://github.com/GLORYFeonix/VGA_Display">我的GitHub仓库</a></p>
@@ -176,7 +176,6 @@
 <h3 id="根据字典查找到的字形着色"><a href="#根据字典查找到的字形着色" class="headerlink" title="根据字典查找到的字形着色"></a>根据字典查找到的字形着色</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">always @(posedge clk<span class="comment">/* or negedge rst_n */</span>)  </span><br><span class="line">begin  </span><br><span class="line">    c=<span class="number">0</span>;  </span><br><span class="line">    <span class="keyword">if</span> ((ypos&gt;=<span class="number">300</span>)&amp;&amp;(ypos&lt;=<span class="number">306</span>))   </span><br><span class="line">        begin  </span><br><span class="line">            c0&lt;=(col0[ypos<span class="number">-300</span>])&amp;&amp;(xpos==<span class="number">200</span>);  </span><br><span class="line">            c1&lt;=(col1[ypos<span class="number">-300</span>])&amp;&amp;(xpos==<span class="number">201</span>);  </span><br><span class="line">            c2&lt;=(col2[ypos<span class="number">-300</span>])&amp;&amp;(xpos==<span class="number">202</span>);  </span><br><span class="line">            c3&lt;=(col3[ypos<span class="number">-300</span>])&amp;&amp;(xpos==<span class="number">203</span>);  </span><br><span class="line">            c4&lt;=(col4[ypos<span class="number">-300</span>])&amp;&amp;(xpos==<span class="number">204</span>);  </span><br><span class="line">            c5&lt;=(col5[ypos<span class="number">-300</span>])&amp;&amp;(xpos==<span class="number">205</span>);  </span><br><span class="line">            c6&lt;=(col6[ypos<span class="number">-300</span>])&amp;&amp;(xpos==<span class="number">206</span>);  </span><br><span class="line">            c=c0|c1|c2|c3|c4|c5|c6;  </span><br><span class="line">        end  </span><br><span class="line">end  </span><br><span class="line"></span><br><span class="line">assign vga_r=c?<span class="number">1</span>:<span class="number">0</span>;  </span><br><span class="line">assign vga_g=<span class="number">0</span>;  </span><br><span class="line">assign vga_b=<span class="number">1</span>;  </span><br></pre></td></tr></table></figure>
 
 <h1 id="结果展示"><a href="#结果展示" class="headerlink" title="结果展示"></a>结果展示</h1><p><img data-src="vga_display.gif"></p>
-<img data-src="/2021/12/27/%E5%9F%BA%E4%BA%8EFPGA%E7%9A%84VGA%E6%8E%A5%E5%8F%A3%E6%98%BE%E7%A4%BA%E5%B1%8F%E6%98%BE%E7%A4%BA%E5%AE%9E%E9%AA%8C/example.jpg" class="" title="This is an example image">
 ]]></content>
       <categories>
         <category>FPGA</category>
