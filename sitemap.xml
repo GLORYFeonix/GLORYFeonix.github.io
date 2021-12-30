@@ -109,14 +109,14 @@
   </url>
   
   <url>
-    <loc>https://gloryfeonix.github.io/tags/FPGA/</loc>
+    <loc>https://gloryfeonix.github.io/tags/%E7%8E%8B%E5%BF%83%E5%87%8C/</loc>
     <lastmod>2021-12-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://gloryfeonix.github.io/tags/%E7%8E%8B%E5%BF%83%E5%87%8C/</loc>
+    <loc>https://gloryfeonix.github.io/tags/FPGA/</loc>
     <lastmod>2021-12-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -132,6 +132,13 @@
   </url>
   
   <url>
+    <loc>https://gloryfeonix.github.io/categories/%E5%BF%83%E6%83%85%E9%9A%8F%E7%AC%94/</loc>
+    <lastmod>2021-12-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://gloryfeonix.github.io/categories/FPGA/</loc>
     <lastmod>2021-12-30</lastmod>
     <changefreq>daily</changefreq>
@@ -140,13 +147,6 @@
   
   <url>
     <loc>https://gloryfeonix.github.io/categories/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/</loc>
-    <lastmod>2021-12-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://gloryfeonix.github.io/categories/%E5%BF%83%E6%83%85%E9%9A%8F%E7%AC%94/</loc>
     <lastmod>2021-12-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
